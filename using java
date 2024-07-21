@@ -1,0 +1,18 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class YouTubeVideoPlayback {
+    public static void main(String[] args) {
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.youtube.com");
+        WebElement searchBox = driver.findElement(By.id("search"));
+        searchBox.sendKeys("Selenium Tutorial");
+        searchBox.submit();
+        WebElement video = driver.findElement(By.id("video-title"));
+        video.click();
+        driver.quit();
+    }
+}
